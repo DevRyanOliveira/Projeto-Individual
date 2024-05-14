@@ -1,0 +1,253 @@
+html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+font-family: Arial, Helvetica, sans-serif;
+}
+.login{
+    margin-top: 12.5%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.navbar {
+    height: 12vh;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.linkNav {
+    height: 5vh;
+    width: 7vw;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}
+
+:hover.linkNav {
+    height: 5vh;
+    width: 7vw;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1.5s;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+
+}
+
+.parte1 {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+}
+
+.logoTop {
+    width: 50px;
+    height: 50px;
+
+    margin-left: 2vw;
+
+}
+
+.nome {
+    height: 3.5vh;
+    margin-left: 1.5vw;
+
+
+}
+
+.parte2 {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding-right: 2.5%;
+}
+.containerLogin{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(../img/backgrounLogin.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.boxLogin{
+    width: 30%;
+    height: 50%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+  
+    align-items: center;
+    flex-direction: column;
+    gap: 5%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12)
+     0px 4px 6px, rgba(0, 0, 0, 0.17)
+      0px 12px 13px, rgba(0, 0, 0, 0.09)
+       0px -3px 5px;
+       animation-name: bordaBottom;
+       animation-duration: 10s;
+       animation-timing-function: ease-in-out;
+       animation-iteration-count: infinite;
+       border: 3px solid white;
+      
+       
+}
+  
+@keyframes bordaBottom {
+    25% {
+
+        border: 3px solid #4BADAC;
+
+
+    }
+
+    50% {
+
+        border: 3px solid #786CAC;
+
+
+    }
+
+    75% {
+
+        border: 3px solid #D33030;
+
+    }
+
+    100% {
+        border: 3px solid #F3BF38;
+
+    }
+}
+
+/* @keyframes boxAnimate {
+    25%{
+        box-shadow: rgba(213, 7, 7, 0.50) 0px 54px 55px, rgba(255, 0, 0, 0.50) 0px -12px 30px rgba(255, 0, 0, 0.50)
+        20px 4px 6px, rgba(255, 0, 0, 0.50)
+         0px 12px 13px, rgba(255, 0, 0, 0.50)
+          0px -3px 5px;
+    }
+    50%{
+        box-shadow: rgba(47, 0, 255, 0.50) 0px 54px 55px, rgba(47, 0, 255, 0.50) 0px -12px 30px rgba(47, 0, 255, 0.50)
+        20px 4px 6px, rgba(47, 0, 255, 0.50)
+         0px 12px 13px, rgba(47, 0, 255, 0.50)
+          0px -3px 5px;
+
+    }
+    75%{
+        box-shadow: rgba(174, 255, 0, 0.50) 0px 54px 55px, rgba(174, 255, 0, 0.50) 0px -12px 30px rgba(174, 255, 0, 0.50)
+        20px 4px 6px, rgba(174, 255, 0, 0.50)
+         0px 12px 13px, rgba(174, 255, 0, 0.50)
+          0px -3px 5px;
+    }
+    100%{
+        box-shadow: rgba(0, 255, 234, 0.25) 0px 54px 55px, rgba(0, 255, 234, 0.12) 0px -12px 30px rgba(0, 255, 234, 0.12)
+        20px 4px 6px, rgba(0, 255, 234, 0.17)
+         0px 12px 13px, rgba(0, 255, 234, 0.09)
+          0px -3px 5px;
+    
+    }
+    
+} */
+.inputL{
+    height: 5vh;
+    width: 70%;
+    padding-left: 5px;
+
+}
+.btnLogin{
+    animation-name: backgroudBtn;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    height: 5vh;
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(190, 190, 232);
+    border-radius: 5px;
+
+}
+@keyframes backgroudBtn {
+    25% {
+
+       background-color:  #4BADAC;
+
+
+    }
+
+    50% {
+
+       background-color:  #786CAC;
+
+
+    }
+
+    75% {
+
+       background-color:  #D33030;
+
+    }
+
+    90% {
+       background-color:  #F3BF38;
+
+    }
+    100%{
+        background-color: white;
+
+    }
+}
+:hover.btnLogin{
+        height: 5vh;
+        width: 50%;
+        background-color: rgba(255, 255, 255, 0.571);
+        border: 2px solid rgb(0, 0, 0);
+        border-radius: 5px;
+        transition: 1s;
+    
+
+
+    }
+.boxLinkLogin{
+    width: 72.5%;
+    display: flex;
+    font-size: 13px;
+    color: black;
+}
+    
