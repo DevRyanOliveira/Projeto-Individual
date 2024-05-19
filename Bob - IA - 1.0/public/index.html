@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BobIA</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    
+        <div class="boxGrafico">
+            <div class="Grafico">
+                <canvas id="grafico" width="100" height="100"></canvas>
+            </div>
+
+
+        </div>
+        <div class="boxLadoGrafico">
+
+            <div class="ia">
+                <h2>CHAT</h2>
+                <div class="resposta">
+               
+                    <div id="resposta">
+                     
+                        <span style="display: flex; align-items: center; flex-direction: column; gap: 50px; justify-content: center;">
+                           
+                           <img src="BOB.png" style="height: 100px;" alt="">
+                        </span>
+                    </div>
+                </div>
+                <div class="pergunta">
+
+                    <div class="boxPergunta">
+                        <textarea id="pergunta" type="text" placeholder="Digite a pergunta..."></textarea>
+
+                        <button onclick="gerarResposta()">
+                            <img src="enviar.png" class="enviar" alt="">
+                        </button>
+                    </div>
+
+                </div>
+                <span style="color: white; font-size: smaller;">  Use para fazer perguntas relacionadas ao esporte e saude.</span>
+              
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+    <script>
+        const ctx = document.getElementById('grafico').getContext('2d');
+        const comparisonChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Físico', 'Mental', 'Social', 'Corporativo'],
+                datasets: [{
+                    label: 'Pessoa Ativa',
+                    data: [90, 85, 80, 75],
+                    backgroundColor: '#34ee49',
+                    borderColor: 'white',
+                    borderWidth: 1
+                }, {
+                    label: 'Pessoa Sedentária',
+                    data: [50, 55, 60, 50],
+                    backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                    borderColor: 'white',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: 'white' // Cor branca para o texto dos eixos
+
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: 'white' // Cor branca para o texto dos eixos
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'white' // Cor branca para as legendas
+                        }
+                    }
+                }
+            }
+        });
+
+
+        async function gerarResposta() {
+            const pergunta = document.getElementById('pergunta').value;
+
+            const response = await fetch('/perguntar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ pergunta })
+            });
+
+            const data = await response.json();
+
+            
+            document.getElementById('resposta').innerText = data.resultado;
+        }
+
+    </script>
